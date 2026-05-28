@@ -48,14 +48,10 @@ header .nav-brand svg {
   fill: #fff;
 }
 
-header .nav-logo-text {
-  font-family: var(--heading-font-family);
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #fff;
-  white-space: nowrap;
+header .nav-logo-img {
+  width: 160px;
+  height: auto;
+  display: block;
 }
 
 header .nav-search-icon {
@@ -153,8 +149,8 @@ header .nav-menu-dialog {
   left: 0;
   width: 100%;
   height: 100dvh;
-  background-color: #1a1a2e;
-  color: #fff;
+  background-color: #fff;
+  color: #2d3b45;
   overflow: hidden auto;
   padding: calc(var(--nav-height, 64px) + 20px) 20px 40px;
   box-sizing: border-box;
@@ -184,6 +180,7 @@ header .nav-menu-dialog .nav-close-btn {
   top: 16px;
   right: 16px;
   z-index: 10;
+  color: #2d3b45;
 }
 
 /* Search button */
@@ -197,21 +194,22 @@ header .nav-search-btn {
   gap: 12px;
   width: 100%;
   padding: 14px 20px;
-  border: 1px solid rgb(255 255 255 / 30%);
+  border: 1px solid #ccc;
   border-radius: 30px;
-  color: #fff;
+  color: #2d3b45;
   text-decoration: none;
   font-size: 16px;
   transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 header .nav-search-btn:hover {
-  border-color: rgb(255 255 255 / 60%);
-  background-color: rgb(255 255 255 / 5%);
+  border-color: #999;
+  background-color: #f5f5f5;
 }
 
 header .nav-search-btn svg {
   flex-shrink: 0;
+  stroke: #2d3b45;
 }
 
 /* Accordion panels */
@@ -264,11 +262,11 @@ header .nav-accordion {
 }
 
 header .nav-panel {
-  border-bottom: 1px solid rgb(255 255 255 / 15%);
+  border-bottom: 1px solid #e0e0e0;
 }
 
 header .nav-panel:first-child {
-  border-top: 1px solid rgb(255 255 255 / 15%);
+  border-top: 1px solid #e0e0e0;
 }
 
 /* Panel trigger button */
@@ -280,20 +278,22 @@ header .nav-panel-trigger {
   padding: 18px 0;
   background: none;
   border: none;
-  color: #fff;
+  color: #2d3b45;
   font-size: 18px;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   cursor: pointer;
   text-align: left;
   transition: color 0.2s ease;
 }
 
 header .nav-panel-trigger:hover {
-  color: rgb(255 255 255 / 80%);
+  color: #0b6e4f;
 }
 
 header .nav-panel-trigger:focus-visible {
-  outline: 2px solid #fff;
+  outline: 2px solid #2d3b45;
   outline-offset: -2px;
   border-radius: 4px;
 }
@@ -302,6 +302,7 @@ header .nav-panel-trigger:focus-visible {
 header .nav-chevron {
   flex-shrink: 0;
   transition: transform 0.3s ease;
+  stroke: #2d3b45;
 }
 
 header .nav-panel-trigger[aria-expanded="true"] .nav-chevron {
@@ -330,7 +331,7 @@ header .nav-panel-section h3 {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgb(255 255 255 / 60%);
+  color: #0b6e4f;
   margin: 0 0 12px;
 }
 
@@ -355,14 +356,17 @@ header .nav-panel-section.nav-section-primary ul {
 header .nav-panel-section.nav-section-primary a {
   display: block;
   padding: 8px 0;
-  color: #fff;
+  color: #2d3b45;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   transition: color 0.2s ease;
 }
 
 header .nav-panel-section.nav-section-primary a:hover {
-  color: rgb(255 255 255 / 70%);
+  color: #0b6e4f;
 }
 
 /* Show all link */
@@ -370,17 +374,19 @@ header .nav-show-all {
   display: inline-block;
   margin-top: 8px;
   padding: 6px 0;
-  color: rgb(255 255 255 / 80%);
+  color: #2d3b45;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  border-bottom: 1px solid rgb(255 255 255 / 40%);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #ccc;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 header .nav-show-all:hover {
-  color: #fff;
-  border-color: #fff;
+  color: #0b6e4f;
+  border-color: #0b6e4f;
 }
 
 /* Category links with icons */
@@ -396,22 +402,24 @@ header .nav-panel-section.nav-section-categories a {
   align-items: center;
   gap: 10px;
   padding: 8px 12px;
-  color: #fff;
+  color: #2d3b45;
   text-decoration: none;
   font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   border-radius: 8px;
   transition: background-color 0.2s ease;
 }
 
 header .nav-panel-section.nav-section-categories a:hover {
-  background-color: rgb(255 255 255 / 8%);
+  background-color: #f0f0f0;
 }
 
 header .nav-panel-section.nav-section-categories img {
   width: 28px;
   height: 28px;
   flex-shrink: 0;
-  filter: brightness(0) invert(1);
 }
 
 /* Featured cards with images */
@@ -424,12 +432,12 @@ header .nav-panel-section.nav-section-featured ul {
 header .nav-panel-section.nav-section-featured li {
   border-radius: 12px;
   overflow: hidden;
-  background-color: rgb(255 255 255 / 6%);
+  background-color: #f5f5f5;
   transition: background-color 0.2s ease;
 }
 
 header .nav-panel-section.nav-section-featured li:hover {
-  background-color: rgb(255 255 255 / 10%);
+  background-color: #eee;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -438,10 +446,11 @@ header .nav-panel-section.nav-section-featured a {
   align-items: center;
   gap: 12px;
   padding: 10px;
-  color: #fff;
+  color: #2d3b45;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
+  text-transform: uppercase;
 }
 
 header .nav-panel-section.nav-section-featured img {
@@ -456,7 +465,7 @@ header .nav-panel-section.nav-section-featured p {
   margin: 4px 0 0;
   font-size: 13px;
   font-weight: 400;
-  color: rgb(255 255 255 / 60%);
+  color: #666;
   line-height: 1.4;
 }
 
@@ -464,29 +473,27 @@ header .nav-panel-section.nav-section-featured p {
 header .nav-bookmarks {
   margin-top: 32px;
   padding-top: 24px;
-  border-top: 1px solid rgb(255 255 255 / 15%);
+  border-top: 1px solid #e0e0e0;
 }
 
 header .nav-bookmarks-link {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #fff;
+  color: #2d3b45;
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   padding: 12px 0;
   transition: color 0.2s ease;
 }
 
 header .nav-bookmarks-link:hover {
-  color: rgb(255 255 255 / 80%);
+  color: #0b6e4f;
 }
 
-/* Desktop inline nav links */
-header .nav-inline-links {
-  display: none;
-}
 
 /* Desktop responsive (900px+) */
 @media (width >= 900px) {
@@ -498,38 +505,6 @@ header .nav-inline-links {
   header .nav-brand svg {
     width: 160px;
     height: 32px;
-  }
-
-  header .nav-inline-links {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  header .nav-inline-links button {
-    background: none;
-    border: none;
-    color: #fff;
-    font-family: var(--body-font-family);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1.6px;
-    text-transform: uppercase;
-    padding: 8px 16px;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: opacity 0.2s ease;
-  }
-
-  header .nav-inline-links button:hover {
-    opacity: 0.7;
-  }
-
-  header .nav-hamburger-btn {
-    display: none;
   }
 
   header .nav-actions {
