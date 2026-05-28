@@ -48,9 +48,7 @@ function buildBrand(brandSection) {
     const brandLink = document.createElement('a');
     brandLink.href = link.href;
     brandLink.setAttribute('aria-label', 'Queensland - Home');
-    brandLink.innerHTML = `<svg viewBox="0 0 180 32" fill="currentColor" aria-hidden="true">
-      <text x="0" y="24" font-size="20" font-weight="700" font-family="sans-serif">Queensland</text>
-    </svg>`;
+    brandLink.innerHTML = '<span class="nav-logo-text">Queensland</span>';
     brand.append(brandLink);
   }
   return brand;
@@ -340,14 +338,35 @@ export default async function decorate(block) {
   const brandSection = navContent.children[0];
   const brand = buildBrand(brandSection);
 
-  // Actions (bookmark + hamburger)
+  // Inline nav links for desktop (visible at >= 900px)
+  const inlineLinks = document.createElement('ul');
+  inlineLinks.className = 'nav-inline-links';
+  const navSection = navContent.children[1];
+  if (navSection) {
+    navSection.querySelectorAll('h2').forEach((h2) => {
+      const li = document.createElement('li');
+      const btn = document.createElement('button');
+      btn.textContent = h2.textContent;
+      btn.setAttribute('type', 'button');
+      li.append(btn);
+      inlineLinks.append(li);
+    });
+  }
+
+  // Actions (search + bookmark + hamburger)
   const actions = document.createElement('div');
   actions.className = 'nav-actions';
+  const searchBtn = document.createElement('button');
+  searchBtn.className = 'nav-search-icon';
+  searchBtn.setAttribute('type', 'button');
+  searchBtn.setAttribute('aria-label', 'Search');
+  searchBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
   const bookmarkBtn = buildBookmarkButton();
   const hamburgerBtn = buildHamburgerButton();
-  actions.append(bookmarkBtn, hamburgerBtn);
+  hamburgerBtn.classList.add('nav-hamburger-btn');
+  actions.append(searchBtn, bookmarkBtn, hamburgerBtn);
 
-  headerBar.append(brand, actions);
+  headerBar.append(brand, inlineLinks, actions);
 
   // Full-screen menu dialog
   const menuDialog = buildMenuDialog(navContent);
@@ -377,6 +396,24 @@ export default async function decorate(block) {
   // Accordion behavior
   const accordion = menuDialog.querySelector('.nav-accordion');
   if (accordion) setupAccordion(accordion);
+
+  // Inline nav link clicks open menu to specific panel
+  inlineLinks.querySelectorAll('button').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      openMenu(menuDialog, hamburgerBtn);
+      const panelTriggers = accordion.querySelectorAll('.nav-panel-trigger');
+      panelTriggers.forEach((trigger) => {
+        if (trigger.textContent.trim() === btn.textContent.trim()) {
+          trigger.click();
+        }
+      });
+    });
+  });
+
+  // Search icon opens menu
+  searchBtn.addEventListener('click', () => {
+    openMenu(menuDialog, hamburgerBtn);
+  });
 
   // Bookmark button opens bookmarks page
   bookmarkBtn.addEventListener('click', () => {

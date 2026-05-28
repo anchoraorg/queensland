@@ -9,6 +9,8 @@ header .nav-wrapper {
   z-index: 1000;
   background-color: rgb(0 0 0 / 60%);
   backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgb(166 184 193 / 20%);
+  transition: color 0.35s ease, background-color 0.35s ease;
 }
 
 /* Header bar layout */
@@ -16,10 +18,10 @@ header .nav-header-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1440px;
+  max-width: 1584px;
   margin: 0 auto;
-  padding: 0 20px;
-  height: var(--nav-height, 64px);
+  padding: 0 32px;
+  height: var(--nav-height, 91px);
 }
 
 /* Nav element */
@@ -44,6 +46,26 @@ header .nav-brand svg {
   width: 140px;
   height: 28px;
   fill: #fff;
+}
+
+header .nav-logo-text {
+  font-family: var(--heading-font-family);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+}
+
+header .nav-search-icon {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
 }
 
 /* Actions container (bookmark + hamburger) */
@@ -461,16 +483,53 @@ header .nav-bookmarks-link:hover {
   color: rgb(255 255 255 / 80%);
 }
 
+/* Desktop inline nav links */
+header .nav-inline-links {
+  display: none;
+}
+
 /* Desktop responsive (900px+) */
 @media (width >= 900px) {
   header .nav-header-bar {
-    padding: 0 40px;
-    height: 80px;
+    padding: 0 32px;
+    height: 91px;
   }
 
   header .nav-brand svg {
     width: 160px;
     height: 32px;
+  }
+
+  header .nav-inline-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  header .nav-inline-links button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: var(--body-font-family);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+  }
+
+  header .nav-inline-links button:hover {
+    opacity: 0.7;
+  }
+
+  header .nav-hamburger-btn {
+    display: none;
   }
 
   header .nav-actions {

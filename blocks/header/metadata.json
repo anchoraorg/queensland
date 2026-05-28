@@ -1,0 +1,11 @@
+{
+  "variantName": "header",
+  "baseBlock": "header",
+  "sourceContext": {
+    "originUrl": "https://www.queensland.com/us/en/home",
+    "selector": "header#header-menu2"
+  },
+  "usage": {
+    "pagesUsing": ["/"]
+  }
+}
