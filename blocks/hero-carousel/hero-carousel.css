@@ -183,11 +183,42 @@ main .hero-carousel-container > .hero-carousel-wrapper {
   transition: width 5000ms linear;
 }
 
+/* Hero controls (pause + bookmark) */
+.hero-carousel .hero-carousel-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.hero-carousel .hero-carousel-controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgb(255 255 255 / 60%);
+  background: rgb(0 0 0 / 30%);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  padding: 0;
+}
+
+.hero-carousel .hero-carousel-controls button:hover {
+  background: rgb(0 0 0 / 50%);
+  border-color: #fff;
+}
+
 /* Desktop styles */
 @media (width >= 900px) {
   .hero-carousel .hero-carousel-slide > div:last-child {
-    min-height: 630px;
-    padding: 0 20px 120px;
+    min-height: 85vh;
+    padding: 0 20px 140px;
   }
 
   .hero-carousel h1 {
