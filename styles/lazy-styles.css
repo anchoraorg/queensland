@@ -137,13 +137,23 @@ main > .section:nth-child(8) .default-content-wrapper li {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  background: linear-gradient(135deg, #586f78 0%, #333f48 100%);
+  background: #333f48;
   min-height: 180px;
   display: flex;
   align-items: flex-end;
 }
 
+main > .section:nth-child(8) .default-content-wrapper li img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 main > .section:nth-child(8) .default-content-wrapper li a {
+  position: relative;
+  z-index: 2;
   display: block;
   width: 100%;
   padding: 20px;
@@ -154,6 +164,7 @@ main > .section:nth-child(8) .default-content-wrapper li a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+  background: linear-gradient(to top, rgb(0 0 0 / 60%) 0%, transparent 100%);
 }
 
 main > .section:nth-child(8) .default-content-wrapper li:first-child {
@@ -182,13 +193,24 @@ main > .section:nth-child(9) .default-content-wrapper li {
   scroll-snap-align: start;
   border-radius: 12px;
   overflow: hidden;
-  background: linear-gradient(135deg, #0b6e4f 0%, #333f48 100%);
+  background: #333f48;
   min-height: 280px;
   display: flex;
   align-items: flex-end;
+  position: relative;
+}
+
+main > .section:nth-child(9) .default-content-wrapper li img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 main > .section:nth-child(9) .default-content-wrapper li a {
+  position: relative;
+  z-index: 2;
   display: block;
   width: 100%;
   padding: 16px;
@@ -199,6 +221,7 @@ main > .section:nth-child(9) .default-content-wrapper li a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+  background: linear-gradient(to top, rgb(0 0 0 / 60%) 0%, transparent 100%);
 }
 
 main > .section:nth-child(9) .default-content-wrapper > p:last-child a {
@@ -231,10 +254,11 @@ main > .section:nth-child(10) .default-content-wrapper ul {
 main > .section:nth-child(10) .default-content-wrapper li {
   border-radius: 12px;
   overflow: hidden;
-  background: linear-gradient(135deg, #586f78 0%, #1a1a2e 100%);
+  background: #1a1a2e;
   min-height: 200px;
   display: flex;
   align-items: flex-end;
+  position: relative;
 }
 
 main > .section:nth-child(10) .default-content-wrapper li:first-child {
@@ -242,7 +266,17 @@ main > .section:nth-child(10) .default-content-wrapper li:first-child {
   min-height: 300px;
 }
 
+main > .section:nth-child(10) .default-content-wrapper li img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 main > .section:nth-child(10) .default-content-wrapper li a {
+  position: relative;
+  z-index: 2;
   display: block;
   width: 100%;
   padding: 20px;
@@ -251,6 +285,7 @@ main > .section:nth-child(10) .default-content-wrapper li a {
   font-size: 15px;
   font-weight: 600;
   line-height: 1.3;
+  background: linear-gradient(to top, rgb(0 0 0 / 70%) 0%, transparent 100%);
 }
 
 main > .section:nth-child(10) .default-content-wrapper > p:last-child a {
@@ -287,13 +322,24 @@ main > .section:nth-child(11) .default-content-wrapper li {
   scroll-snap-align: start;
   border-radius: 12px;
   overflow: hidden;
-  background: linear-gradient(135deg, #0b6e4f 0%, #333f48 100%);
+  background: #333f48;
   min-height: 350px;
   display: flex;
   align-items: flex-end;
+  position: relative;
+}
+
+main > .section:nth-child(11) .default-content-wrapper li img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 main > .section:nth-child(11) .default-content-wrapper li a {
+  position: relative;
+  z-index: 2;
   display: block;
   width: 100%;
   padding: 20px;
@@ -304,6 +350,7 @@ main > .section:nth-child(11) .default-content-wrapper li a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+  background: linear-gradient(to top, rgb(0 0 0 / 60%) 0%, transparent 100%);
 }
 
 /* "Ready to ROAM?" section — remove default section margin */
