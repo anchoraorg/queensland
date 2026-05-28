@@ -131,6 +131,86 @@
   vertical-align: super;
 }
 
+/* Category image buttons (Events / What's new) */
+.whats-on .whats-on-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  padding: 30px 0;
+  background-color: var(--color-off-white);
+}
+
+.whats-on .whats-on-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 210px;
+  height: 210px;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whats-on .whats-on-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 15%);
+}
+
+.whats-on .whats-on-btn-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.whats-on .whats-on-btn-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease-in-out;
+}
+
+.whats-on .whats-on-btn:hover .whats-on-btn-bg img {
+  transform: scale(1.08);
+}
+
+.whats-on .whats-on-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 35%);
+  z-index: 1;
+}
+
+.whats-on .whats-on-btn-overlay {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.whats-on .whats-on-btn-icon {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.whats-on .whats-on-btn-overlay h3 {
+  color: var(--color-white);
+  font-family: var(--heading-font-family);
+  font-size: 24px;
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  line-height: 1;
+  margin: 0;
+}
+
 @media (width >= 992px) {
   .whats-on .whats-on-heading h2 {
     font-size: 60px;
@@ -138,5 +218,18 @@
 
   .whats-on .whats-on-cards {
     gap: 80px;
+  }
+}
+
+@media (width < 576px) {
+  .whats-on .whats-on-btn {
+    width: 100%;
+    height: 120px;
+  }
+
+  .whats-on .whats-on-buttons {
+    flex-direction: column;
+    padding: 20px;
+    gap: 12px;
   }
 }
