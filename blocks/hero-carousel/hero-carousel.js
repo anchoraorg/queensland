@@ -119,6 +119,22 @@ export default function decorate(block) {
   controls.append(pauseBtn, bookmarkBtn);
   block.append(controls);
 
+  // Pull the next sibling section (Discover text) into the hero block container
+  const heroSection = block.closest('.section');
+  if (heroSection) {
+    const nextSection = heroSection.nextElementSibling;
+    if (nextSection && nextSection.classList.contains('center')) {
+      const discoverPanel = document.createElement('div');
+      discoverPanel.className = 'hero-carousel-discover';
+      const wrapper = nextSection.querySelector('.default-content-wrapper');
+      if (wrapper) {
+        discoverPanel.innerHTML = wrapper.innerHTML;
+      }
+      block.append(discoverPanel);
+      nextSection.remove();
+    }
+  }
+
   // Start autoplay
   startAutoplay();
 }

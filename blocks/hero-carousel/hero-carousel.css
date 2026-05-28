@@ -183,6 +183,53 @@ main .hero-carousel-container > .hero-carousel-wrapper {
   transition: width 5000ms linear;
 }
 
+/* Discover panel (pulled into hero block from next section) */
+.hero-carousel .hero-carousel-discover {
+  position: relative;
+  z-index: 10;
+  background: #fff;
+  text-align: center;
+  padding: 50px 24px 40px;
+  margin-top: -75px;
+}
+
+.hero-carousel .hero-carousel-discover h2 {
+  color: #d19636;
+  font-family: var(--heading-font-family);
+  font-size: 42px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 20px;
+}
+
+.hero-carousel .hero-carousel-discover p {
+  max-width: 800px;
+  margin: 0 auto 16px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.hero-carousel .hero-carousel-discover a:any-link {
+  color: #0b6e4f;
+  font-weight: 600;
+}
+
+@media (width >= 900px) {
+  .hero-carousel .hero-carousel-discover {
+    padding: 60px 60px 50px;
+  }
+
+  .hero-carousel .hero-carousel-discover h2 {
+    font-size: 52px;
+  }
+
+  .hero-carousel .hero-carousel-discover p {
+    font-size: 18px;
+  }
+}
+
 /* Hero controls (pause + bookmark) */
 .hero-carousel .hero-carousel-controls {
   position: absolute;

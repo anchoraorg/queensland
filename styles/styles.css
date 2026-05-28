@@ -346,33 +346,10 @@ main .section.dark h3 {
 
 main .section.center {
   text-align: center;
-  position: relative;
-  margin-top: -75px;
-  padding-top: 60px;
-  padding-bottom: 40px;
-  background: #fff;
-  z-index: 5;
 }
 
 main .section.center p {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-}
-
-main .section.center h2 {
-  color: #d19636;
-  font-size: 42px;
-  font-weight: 700;
-}
-
-main .section.center a:any-link {
-  color: #0b6e4f;
-  font-weight: 600;
-}
-
-@media (width >= 900px) {
-  main .section.center h2 {
-    font-size: 52px;
-  }
 }
