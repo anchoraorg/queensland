@@ -80,10 +80,10 @@ main .hero-carousel-container > .hero-carousel-wrapper {
   position: relative;
   z-index: 3;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 20px 80px;
   width: 100%;
   min-height: 350px;
 }
@@ -187,7 +187,7 @@ main .hero-carousel-container > .hero-carousel-wrapper {
 @media (width >= 900px) {
   .hero-carousel .hero-carousel-slide > div:last-child {
     min-height: 630px;
-    padding: 0 20px;
+    padding: 0 20px 120px;
   }
 
   .hero-carousel h1 {
