@@ -342,3 +342,13 @@ main .section.dark h2,
 main .section.dark h3 {
   color: #fff;
 }
+
+main .section.center {
+  text-align: center;
+}
+
+main .section.center p {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
