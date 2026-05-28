@@ -1,0 +1,131 @@
+/* Block: video-cta — "That Holiday Feeling" */
+
+.video-cta-container {
+  margin: 0;
+}
+
+.video-cta-container > .video-cta-wrapper {
+  max-width: 100%;
+  padding: 0;
+}
+
+.video-cta {
+  background-color: var(--color-dark-slate);
+  padding: 40px 24px;
+}
+
+.video-cta .video-cta-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* Video embed */
+.video-cta .video-cta-video {
+  width: 100%;
+  max-width: 640px;
+}
+
+.video-cta .video-cta-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.video-cta .video-cta-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Content */
+.video-cta .video-cta-content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.video-cta .video-cta-content h1 {
+  font-family: var(--heading-font-family);
+  font-size: 36px;
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-white);
+  line-height: 1;
+  margin: 0 0 20px;
+}
+
+.video-cta .video-cta-content p {
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgb(255 255 255 / 80%);
+  margin: 0 0 24px;
+}
+
+.video-cta .video-cta-content em {
+  font-style: italic;
+}
+
+/* CTA Button */
+.video-cta .video-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: 2px solid var(--color-white);
+  border-radius: var(--radius-btn);
+  color: var(--color-white);
+  text-decoration: none;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.video-cta .video-cta-button:hover {
+  background-color: var(--color-white);
+  color: var(--color-dark-slate);
+}
+
+.video-cta .video-cta-button svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Desktop: side by side */
+@media (width >= 992px) {
+  .video-cta {
+    padding: 60px 40px;
+  }
+
+  .video-cta .video-cta-inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .video-cta .video-cta-video {
+    flex: 1;
+  }
+
+  .video-cta .video-cta-content {
+    flex: 1;
+    text-align: left;
+  }
+
+  .video-cta .video-cta-content h1 {
+    font-size: 48px;
+  }
+}
