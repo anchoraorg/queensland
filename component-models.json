@@ -145,7 +145,7 @@
     "id": "card",
     "fields": [
       {
-        "component": "reference",
+        "component": "richtext",
         "valueType": "string",
         "name": "image",
         "label": "Image",
@@ -183,7 +183,7 @@
     "id": "carousel-destination-item",
     "fields": [
       {
-        "component": "reference",
+        "component": "richtext",
         "valueType": "string",
         "name": "media_image",
         "label": "Background Image",
@@ -209,7 +209,7 @@
     "id": "carousel-map-item",
     "fields": [
       {
-        "component": "reference",
+        "component": "richtext",
         "valueType": "string",
         "name": "media_image",
         "label": "Background Image",
@@ -262,9 +262,13 @@
   },
   {
     "id": "hero-carousel",
+    "fields": []
+  },
+  {
+    "id": "hero-carousel-slide",
     "fields": [
       {
-        "component": "reference",
+        "component": "richtext",
         "valueType": "string",
         "name": "image",
         "label": "Image",
@@ -290,7 +294,7 @@
     "id": "hero-signup",
     "fields": [
       {
-        "component": "reference",
+        "component": "richtext",
         "valueType": "string",
         "name": "image",
         "label": "Image",
@@ -381,7 +385,7 @@
         ]
       },
       {
-        "component": "reference",
+        "component": "richtext",
         "valueType": "string",
         "name": "content_image",
         "label": "Image",
