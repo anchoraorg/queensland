@@ -58,7 +58,7 @@
   font-weight: var(--weight-bold);
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
-  color: var(--color-dark-slate);
+  color: var(--color-gold);
   line-height: 1;
   margin: 0 0 20px;
 }
@@ -123,7 +123,7 @@
 
   .video-cta .video-cta-content {
     flex: 1;
-    text-align: left;
+    text-align: center;
   }
 
   .video-cta .video-cta-content h1 {
