@@ -347,11 +347,10 @@ main .section.dark h3 {
 main .section.center {
   text-align: center;
   position: relative;
-  margin-top: -60px;
-  padding-top: 80px;
+  margin-top: -75px;
+  padding-top: 60px;
   padding-bottom: 40px;
   background: #fff;
-  clip-path: polygon(0 40px, 50% 0, 100% 40px, 100% 100%, 0 100%);
   z-index: 5;
 }
 
@@ -373,11 +372,6 @@ main .section.center a:any-link {
 }
 
 @media (width >= 900px) {
-  main .section.center {
-    margin-top: -80px;
-    padding-top: 100px;
-  }
-
   main .section.center h2 {
     font-size: 52px;
   }

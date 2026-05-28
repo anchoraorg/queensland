@@ -217,7 +217,7 @@ main .hero-carousel-container > .hero-carousel-wrapper {
 /* Desktop styles */
 @media (width >= 900px) {
   .hero-carousel .hero-carousel-slide > div:last-child {
-    min-height: 560px;
+    min-height: 630px;
     padding: 0 20px 100px;
   }
 
