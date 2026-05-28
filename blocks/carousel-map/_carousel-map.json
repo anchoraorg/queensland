@@ -1,0 +1,70 @@
+{
+  "definitions": [
+    {
+      "title": "Carousel Map",
+      "id": "carousel-map",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Carousel Map",
+              "filter": "carousel-map"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Carousel Map Slide",
+      "id": "carousel-map-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Carousel Map Slide",
+              "model": "carousel-map-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "carousel-map-item",
+      "fields": [
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "media_image",
+          "label": "Background Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "media_imageAlt",
+          "value": "",
+          "label": "Background Alt"
+        },
+        {
+          "component": "richtext",
+          "name": "content_text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "carousel-map",
+      "components": [
+        "carousel-map-item"
+      ]
+    }
+  ]
+}

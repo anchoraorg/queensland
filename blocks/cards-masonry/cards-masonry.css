@@ -1,0 +1,139 @@
+/* Block: cards-masonry
+ * Masonry grid layout with varied-size tiles.
+ * First tile spans 2 columns and 2 rows (featured/large).
+ * Remaining tiles are equal-sized squares.
+ * Each tile has a large image with a category name overlay at the bottom.
+ * Source measurements: 1170px total, tiles at 234px unit, large = 468px (2 units).
+ */
+
+.cards-masonry > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.cards-masonry > ul > li {
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  aspect-ratio: 1 / 1;
+}
+
+.cards-masonry > ul > li a {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+/* Image styling */
+.cards-masonry .cards-masonry-card-image {
+  line-height: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cards-masonry .cards-masonry-card-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.cards-masonry > ul > li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dark gradient overlay at the bottom of each tile */
+.cards-masonry > ul > li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgb(0 0 0 / 45%) 0%, rgb(0 0 0 / 0%) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Text overlay (card body with category name) */
+.cards-masonry .cards-masonry-card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-end;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Category name text */
+.cards-masonry .cards-masonry-card-body p {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(255 255 255);
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  line-height: 24px;
+  text-shadow: rgb(0 0 0 / 60%) 0 2px 20px;
+}
+
+/* Reset EDS button styles on links inside masonry tiles */
+.cards-masonry a.button:any-link {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  white-space: normal;
+  max-width: none;
+}
+
+.cards-masonry p.button-container {
+  margin: 0;
+}
+
+/* Tablet: 2-column grid */
+@media (width >= 600px) {
+  .cards-masonry > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards-masonry > ul > li:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+/* Desktop: 5-column masonry matching source (5 x 234 = 1170px) */
+@media (width >= 900px) {
+  .cards-masonry > ul {
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+
+  /* First tile spans 2 columns and 2 rows */
+  .cards-masonry > ul > li:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}

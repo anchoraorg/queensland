@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-masonry",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-28T06:28:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.queensland.com/us/en/home",
+    "originPage": "Queensland Tourism Homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "masonry-grid",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "masonry grid of image + title tiles with varied sizes",
+    "buttonCount": 0,
+    "imageCount": 7
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "experience category grids",
+      "article card grids with masonry layout",
+      "image-heavy content grids with varied tile sizes",
+      "editorial content discovery sections"
+    ],
+    "notSuitableFor": [
+      "uniform grid cards (same size)",
+      "text-only card lists",
+      "horizontal carousel layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/us/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-28T06:28:00.000Z"
+  }
+}

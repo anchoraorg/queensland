@@ -1,0 +1,250 @@
+/* Block: carousel-destination */
+
+/* Horizontal scrollable carousel of portrait destination cards */
+
+/* Section heading - centered with brand accent color */
+.carousel-destination-container .default-content-wrapper {
+  text-align: center;
+}
+
+.carousel-destination-container .default-content-wrapper h2 {
+  color: #d19636;
+}
+
+/* Full-width wrapper override */
+.carousel-destination-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.carousel-destination {
+  padding: 0 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Slides container with navigation */
+.carousel-destination .carousel-destination-slides-container {
+  position: relative;
+}
+
+/* Reset list styles */
+.carousel-destination .carousel-destination-slides,
+.carousel-destination .carousel-destination-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Horizontal scroll track */
+.carousel-destination .carousel-destination-slides {
+  display: flex;
+  gap: 30px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: auto hidden;
+  padding: 23px 0 22px;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(0 129 125) rgb(165 184 194);
+}
+
+.carousel-destination .carousel-destination-slides::-webkit-scrollbar {
+  height: 3px;
+}
+
+.carousel-destination .carousel-destination-slides::-webkit-scrollbar-track {
+  background: rgb(165 184 194);
+  border-radius: 10px;
+}
+
+.carousel-destination .carousel-destination-slides::-webkit-scrollbar-thumb {
+  background: rgb(0 129 125);
+  border-radius: 0;
+}
+
+/* Individual slide / card */
+.carousel-destination .carousel-destination-slide {
+  flex: 0 0 270px;
+  scroll-snap-align: start;
+  position: relative;
+  width: 270px;
+  height: 450px;
+  overflow: hidden;
+}
+
+/* Image cell - fills entire card */
+.carousel-destination .carousel-destination-slide .carousel-destination-slide-image {
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-destination .carousel-destination-slide .carousel-destination-slide-image picture {
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-destination .carousel-destination-slide .carousel-destination-slide-image picture > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Reset any EDS p-wrapping on images */
+.carousel-destination .carousel-destination-slide .carousel-destination-slide-image p {
+  margin: 0;
+  line-height: 0;
+}
+
+/* Content cell - overlaid on image, centered */
+.carousel-destination .carousel-destination-slide .carousel-destination-slide-content {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  background: transparent;
+  color: rgb(255 255 255);
+  margin: 0;
+}
+
+/* "Visit" eyebrow text */
+.carousel-destination .carousel-destination-slide .carousel-destination-slide-content p {
+  font-size: 12px;
+  font-family: var(--body-font-family);
+  font-weight: 600;
+  color: rgb(255 255 255);
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  line-height: 18px;
+  margin: 0 0 4px;
+}
+
+/* Destination name heading */
+.carousel-destination .carousel-destination-slide .carousel-destination-slide-content h5,
+.carousel-destination .carousel-destination-slide .carousel-destination-slide-content h4,
+.carousel-destination .carousel-destination-slide .carousel-destination-slide-content h3 {
+  font-size: 24px;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  color: rgb(255 255 255);
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  line-height: 24px;
+  margin: 0;
+}
+
+/* Links within cards - reset button styling */
+.carousel-destination .carousel-destination-slide a:any-link {
+  color: rgb(255 255 255);
+  text-decoration: none;
+}
+
+/* Navigation buttons */
+.carousel-destination .carousel-destination-navigation-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -53px;
+  right: -53px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-destination .carousel-destination-navigation-buttons button {
+  pointer-events: auto;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  border-radius: 0;
+  padding: 0;
+  background-color: rgb(88 111 120);
+  border: 1px solid rgb(255 255 255);
+  color: rgb(255 255 255);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.carousel-destination .carousel-destination-navigation-buttons button:hover,
+.carousel-destination .carousel-destination-navigation-buttons button:focus-visible {
+  background-color: rgb(51 63 72);
+}
+
+/* Arrow icons via pseudo-elements */
+.carousel-destination .carousel-destination-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid rgb(255 255 255);
+  border-bottom: 0;
+  border-left: 0;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel-destination .carousel-destination-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 2px);
+}
+
+/* Slide indicators - hidden for this variant (scrollbar replaces dots) */
+.carousel-destination .carousel-destination-slide-indicators {
+  display: none;
+}
+
+/* Mobile adjustments */
+@media (width < 600px) {
+  .carousel-destination {
+    padding: 0 16px;
+  }
+
+  .carousel-destination .carousel-destination-slide {
+    flex: 0 0 220px;
+    width: 220px;
+    height: 370px;
+  }
+
+  .carousel-destination .carousel-destination-slides {
+    gap: 16px;
+  }
+
+  .carousel-destination .carousel-destination-navigation-buttons {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media (width >= 600px) and (width < 900px) {
+  .carousel-destination .carousel-destination-slide {
+    flex: 0 0 250px;
+    width: 250px;
+    height: 420px;
+  }
+
+  .carousel-destination .carousel-destination-navigation-buttons {
+    left: -30px;
+    right: -30px;
+  }
+}
+
+@media (width >= 900px) {
+  .carousel-destination {
+    padding: 0 32px;
+  }
+
+  .carousel-destination .carousel-destination-navigation-buttons {
+    left: -53px;
+    right: -53px;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "variantName": "carousel-map",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-05-28T06:28:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.queensland.com/us/en/home",
+    "originPage": "Queensland Tourism Homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "interactive-map",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "interactive map + region detail panels in carousel",
+    "buttonCount": 0,
+    "imageCount": 5
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "interactive map-based carousels",
+      "region/location showcases with map navigation",
+      "geographic exploration sections"
+    ],
+    "notSuitableFor": [
+      "simple image carousels",
+      "portrait card carousels",
+      "text-heavy slideshow content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/us/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-28T06:28:00.000Z"
+  }
+}

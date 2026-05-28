@@ -1,0 +1,199 @@
+/* Block: hero-carousel */
+
+/* Full-width image carousel with centered heading overlay */
+
+/* Full-width wrapper override */
+main .hero-carousel-container {
+  margin: 0;
+}
+
+main .hero-carousel-container > .hero-carousel-wrapper {
+  max-width: 100%;
+  padding: 0;
+}
+
+.hero-carousel {
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+/* Slides */
+.hero-carousel .hero-carousel-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 0s 1s;
+  pointer-events: none;
+}
+
+.hero-carousel .hero-carousel-slide.hero-carousel-slide-active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease-in-out, visibility 0s 0s;
+  pointer-events: auto;
+}
+
+/* Image cell (first div in each slide row) */
+.hero-carousel .hero-carousel-slide > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-carousel .hero-carousel-slide > div:first-child picture {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-carousel .hero-carousel-slide > div:first-child img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+
+/* Dark overlay for text readability */
+.hero-carousel .hero-carousel-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgb(0 0 0 / 10%) 0%,
+    rgb(0 0 0 / 5%) 40%,
+    rgb(0 0 0 / 15%) 100%
+  );
+  pointer-events: none;
+}
+
+/* Text cell (second div in each slide row) */
+.hero-carousel .hero-carousel-slide > div:last-child {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  width: 100%;
+  min-height: 350px;
+}
+
+.hero-carousel h1 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffc54d;
+  text-shadow: 0 2px 20px rgb(0 0 0 / 60%);
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Buttons in hero - reset EDS button decoration */
+.hero-carousel p.button-wrapper {
+  display: none;
+}
+
+/* Navigation arrows */
+.hero-carousel .hero-carousel-prev {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(88 111 120 / 70%);
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-carousel .hero-carousel-next {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(88 111 120 / 70%);
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-carousel:hover .hero-carousel-prev,
+.hero-carousel:hover .hero-carousel-next {
+  opacity: 1;
+}
+
+.hero-carousel:hover .hero-carousel-prev:hover,
+.hero-carousel:hover .hero-carousel-next:hover {
+  background-color: rgb(88 111 120);
+}
+
+.hero-carousel .hero-carousel-prev svg,
+.hero-carousel .hero-carousel-next svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Progress bar */
+.hero-carousel .hero-carousel-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: 3px;
+  background-color: rgb(166 184 193 / 40%);
+}
+
+.hero-carousel .hero-carousel-progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: rgb(166 184 193);
+  transition: width 5000ms linear;
+}
+
+/* Desktop styles */
+@media (width >= 900px) {
+  .hero-carousel .hero-carousel-slide > div:last-child {
+    min-height: 630px;
+    padding: 0 20px;
+  }
+
+  .hero-carousel h1 {
+    font-size: 81px;
+    line-height: 81px;
+    letter-spacing: 5.6px;
+    max-width: 690px;
+  }
+}

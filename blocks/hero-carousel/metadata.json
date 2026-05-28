@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-carousel",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-28T06:28:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.queensland.com/us/en/home",
+    "originPage": "Queensland Tourism Homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "homepage-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "carousel slides + heading overlay",
+    "buttonCount": 0,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero sections",
+      "destination landing pages with multiple hero images",
+      "full-width rotating image banners"
+    ],
+    "notSuitableFor": [
+      "text-heavy hero sections",
+      "pages needing single static hero",
+      "compact hero banners"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/us/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-28T06:28:00.000Z"
+  }
+}

@@ -19,9 +19,27 @@
     ]
   },
   {
+    "id": "cards-masonry",
+    "components": [
+      "card"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "carousel-destination",
+    "components": [
+      "carousel-destination-item"
+    ]
+  },
+  {
+    "id": "carousel-map",
+    "components": [
+      "carousel-map-item"
     ]
   },
   {
@@ -37,6 +55,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "tabs-events",
+    "components": [
+      "tabs-events-item"
     ]
   }
 ]

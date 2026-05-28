@@ -1,0 +1,40 @@
+{
+  "variantName": "carousel-destination",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-05-28T06:28:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.queensland.com/us/en/home",
+    "originPage": "Queensland Tourism Homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "destination-showcase",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "portrait image cards + eyebrow + title in horizontal carousel",
+    "buttonCount": 0,
+    "imageCount": 10
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "destination carousels",
+      "event carousels with portrait cards",
+      "road trip showcases",
+      "horizontal scrolling card carousels with portrait images"
+    ],
+    "notSuitableFor": [
+      "full-width hero slideshow",
+      "text-heavy content carousels",
+      "landscape image galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/us/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-28T06:28:00.000Z"
+  }
+}

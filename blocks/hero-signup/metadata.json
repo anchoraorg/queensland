@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-signup",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-28T06:28:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.queensland.com/us/en/home",
+    "originPage": "Queensland Tourism Homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "newsletter-signup",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background image + icon + heading + paragraph + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "newsletter signup sections",
+      "email subscription CTAs",
+      "promotional banners with background imagery and single CTA"
+    ],
+    "notSuitableFor": [
+      "top-of-page hero banners",
+      "sections without CTA actions",
+      "multi-slide carousel heroes"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/us/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-28T06:28:00.000Z"
+  }
+}

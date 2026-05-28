@@ -1,0 +1,39 @@
+{
+  "variantName": "tabs-events",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-05-28T06:28:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.queensland.com/us/en/home",
+    "originPage": "Queensland Tourism Homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "events-showcase",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "tab navigation + map panel + editorial panel",
+    "buttonCount": 0,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "events sections with map and content tabs",
+      "destination exploration with multiple view modes",
+      "content switching between map and list views"
+    ],
+    "notSuitableFor": [
+      "simple FAQ tabs",
+      "product specification tabs",
+      "text-only tab content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/us/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-28T06:28:00.000Z"
+  }
+}

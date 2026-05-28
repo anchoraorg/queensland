@@ -1,0 +1,150 @@
+/* Block: hero-signup
+ * Full-width newsletter signup banner with background image,
+ * dark overlay, centered white text, and teal CTA button.
+ * Source: queensland.com/us/en/home "Ready to ROAM?" section
+ */
+
+/* Full-width wrapper override */
+.hero-signup-container .hero-signup-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.hero-signup {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+  overflow: hidden;
+}
+
+/* Row container: single row with 2 cells (image + text) */
+.hero-signup > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 480px;
+}
+
+/* Image cell: absolute cover behind text */
+.hero-signup > div > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Dark overlay on the image cell */
+.hero-signup > div > div:first-child::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgb(0 0 0 / 40%);
+  z-index: 1;
+}
+
+.hero-signup > div > div:first-child picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-signup > div > div:first-child img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+/* Text cell: centered content */
+.hero-signup > div > div:last-child {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 40px 24px;
+  max-width: 900px;
+}
+
+/* Icon (mail envelope) */
+.hero-signup .icon {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 16px;
+}
+
+.hero-signup > div > div:last-child img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Heading */
+.hero-signup h3 {
+  font-family: var(--heading-font-family);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 20px;
+}
+
+/* Paragraph text */
+.hero-signup p {
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  margin: 0 0 20px;
+}
+
+/* Button (CTA) */
+.hero-signup a.button:any-link {
+  background-color: rgb(0 165 164);
+  color: #fff;
+  border: 2px solid rgb(0 165 164);
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-family: var(--heading-font-family);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+}
+
+.hero-signup a.button:hover,
+.hero-signup a.button:focus-visible {
+  background-color: rgb(0 140 139);
+  border-color: rgb(0 140 139);
+  color: #fff;
+}
+
+/* Button wrapper paragraph */
+.hero-signup p.button-wrapper {
+  margin: 20px 0 0;
+}
+
+/* Desktop adjustments */
+@media (width >= 900px) {
+  .hero-signup h3 {
+    font-size: 48px;
+    line-height: 48px;
+  }
+
+  .hero-signup p {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .hero-signup > div > div:last-child {
+    padding: 60px 32px;
+  }
+}
