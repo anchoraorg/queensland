@@ -1,1 +1,337 @@
+/* stylelint-disable no-descending-specificity */
+
 /* add global styles that can be loaded post LCP here */
+
+/* ============================================================
+   HOMEPAGE SECTIONS STYLING
+   Styles for sections that render as default-content-wrapper
+   ============================================================ */
+
+/* Section heading style - gold centered */
+main > .section > .default-content-wrapper h2 {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #d19636;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* "What's on in Queensland" — Events tab section */
+main > .section:nth-child(4) {
+  background-color: var(--light-color);
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* Events/What's new links as tab-style buttons */
+main > .section:nth-child(5) {
+  background-color: var(--light-color);
+  padding: 0 0 40px;
+}
+
+main > .section:nth-child(5) .default-content-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+main > .section:nth-child(5) .default-content-wrapper p {
+  margin: 0;
+}
+
+main > .section:nth-child(5) .default-content-wrapper a {
+  display: inline-block;
+  padding: 12px 32px;
+  background: #fff;
+  border-radius: 8px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+main > .section:nth-child(5) .default-content-wrapper a:hover {
+  box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
+  transform: translateY(-2px);
+}
+
+/* "That Holiday Feeling" — Video CTA section */
+main > .section:nth-child(6) {
+  background-color: #1a1a2e;
+  color: #fff;
+  padding: 60px 0;
+}
+
+main > .section:nth-child(6) .default-content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main > .section:nth-child(6) .default-content-wrapper h1 {
+  font-family: var(--heading-font-family);
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+main > .section:nth-child(6) .default-content-wrapper p {
+  color: rgb(255 255 255 / 80%);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+main > .section:nth-child(6) .default-content-wrapper a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  transition: background-color 0.2s ease;
+}
+
+main > .section:nth-child(6) .default-content-wrapper a:hover {
+  background-color: rgb(255 255 255 / 10%);
+}
+
+/* "Let us show you around" — centered heading */
+main > .section:nth-child(7) {
+  padding: 60px 0 20px;
+  text-align: center;
+}
+
+/* "What holiday feeling are you?" — masonry-style grid */
+main > .section:nth-child(8) {
+  padding: 20px 0 40px;
+}
+
+main > .section:nth-child(8) .default-content-wrapper h2 {
+  margin-bottom: 30px;
+}
+
+main > .section:nth-child(8) .default-content-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+main > .section:nth-child(8) .default-content-wrapper li {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #586f78 0%, #333f48 100%);
+  min-height: 180px;
+  display: flex;
+  align-items: flex-end;
+}
+
+main > .section:nth-child(8) .default-content-wrapper li a {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--heading-font-family);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+main > .section:nth-child(8) .default-content-wrapper li:first-child {
+  grid-row: span 2;
+  min-height: 376px;
+}
+
+/* "Be our plus one?" — Events carousel */
+main > .section:nth-child(9) {
+  padding: 40px 0;
+}
+
+main > .section:nth-child(9) .default-content-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 12px;
+}
+
+main > .section:nth-child(9) .default-content-wrapper li {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b6e4f 0%, #333f48 100%);
+  min-height: 280px;
+  display: flex;
+  align-items: flex-end;
+}
+
+main > .section:nth-child(9) .default-content-wrapper li a {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--heading-font-family);
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+main > .section:nth-child(9) .default-content-wrapper > p:last-child a {
+  display: inline-block;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid var(--text-color);
+  padding: 10px 24px;
+  border-radius: 30px;
+}
+
+/* "Unlock more Queensland magic" — Article grid */
+main > .section:nth-child(10) {
+  padding: 40px 0;
+}
+
+main > .section:nth-child(10) .default-content-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+main > .section:nth-child(10) .default-content-wrapper li {
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #586f78 0%, #1a1a2e 100%);
+  min-height: 200px;
+  display: flex;
+  align-items: flex-end;
+}
+
+main > .section:nth-child(10) .default-content-wrapper li:first-child {
+  grid-column: span 2;
+  min-height: 300px;
+}
+
+main > .section:nth-child(10) .default-content-wrapper li a {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+main > .section:nth-child(10) .default-content-wrapper > p:last-child a {
+  display: inline-block;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid var(--text-color);
+  padding: 10px 24px;
+  border-radius: 30px;
+}
+
+/* "Roadtrips that are popular right now" — horizontal cards */
+main > .section:nth-child(11) {
+  padding: 40px 0;
+}
+
+main > .section:nth-child(11) .default-content-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 12px;
+}
+
+main > .section:nth-child(11) .default-content-wrapper li {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b6e4f 0%, #333f48 100%);
+  min-height: 350px;
+  display: flex;
+  align-items: flex-end;
+}
+
+main > .section:nth-child(11) .default-content-wrapper li a {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--heading-font-family);
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* "Ready to ROAM?" section — remove default section margin */
+main > .section.hero-signup-container {
+  margin: 0;
+  padding: 0;
+}
+
+/* Desktop grid refinements */
+@media (width >= 900px) {
+  main > .section:nth-child(8) .default-content-wrapper ul {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 220px);
+  }
+
+  main > .section:nth-child(8) .default-content-wrapper li:first-child {
+    grid-row: span 2;
+    min-height: auto;
+  }
+
+  main > .section:nth-child(10) .default-content-wrapper ul {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 200px);
+  }
+
+  main > .section:nth-child(10) .default-content-wrapper li:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+    min-height: auto;
+  }
+}
