@@ -294,7 +294,7 @@
     "id": "hero-signup",
     "fields": [
       {
-        "component": "richtext",
+        "component": "reference",
         "valueType": "string",
         "name": "image",
         "label": "Image",

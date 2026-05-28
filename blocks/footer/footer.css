@@ -1,20 +1,226 @@
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #586f78;
+  color: #fff;
+  font-family: var(--body-font-family);
 }
 
 footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 0;
+  max-width: none;
 }
 
-footer .footer p {
+/* Links Section (Section 0) */
+.footer .footer-links-section {
+  padding: 50px 0;
+}
+
+.footer .footer-links-inner {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.footer .footer-links-col {
+  flex: 1 1 33.333%;
+}
+
+.footer .footer-links-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer .footer-links-col ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.footer .footer-links-col ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+  font-family: var(--body-font-family);
+}
+
+/* Locale Selector */
+.footer .footer-locale {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer .footer-locale-label {
+  font-size: 16px;
+  color: #fff;
+  font-family: var(--body-font-family);
+}
+
+.footer .footer-locale select {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: var(--body-font-family);
+  border-radius: 4px;
+  cursor: pointer;
+  appearance: auto;
+}
+
+.footer .footer-locale select option {
+  color: #333;
+  background: #fff;
+}
+
+/* Bottom Section (Section 1) */
+.footer .footer-bottom-section {
+  background-color: rgb(51 63 72 / 40%);
+  padding: 20px 0;
+}
+
+.footer .footer-bottom-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Social Icons */
+.footer .footer-bottom-inner .footer-social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer .footer-bottom-inner .footer-social li {
+  margin: 0;
+  padding: 0;
+}
+
+.footer .footer-bottom-inner .footer-social li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0;
+  text-decoration: none;
+}
+
+.footer .footer-social .icon {
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+}
+
+.footer .footer-social .icon svg {
+  width: 23px;
+  height: 23px;
+  fill: currentcolor;
+}
+
+/* Acknowledgement */
+.footer .footer-acknowledgement {
+  flex: 1;
+  padding: 0 30px;
+}
+
+.footer .footer-acknowledgement p {
+  color: #fff;
+  font-size: 10px;
+  line-height: 15px;
+  font-family: var(--body-font-family);
   margin: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+/* Brand Logos */
+.footer .footer-logos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.footer .footer-logos-images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.footer .footer-logos-images figure {
+  margin: 0;
+  padding: 0;
+}
+
+.footer .footer-logos-images img {
+  width: 106px;
+  height: 41px;
+  object-fit: contain;
+}
+
+.footer .footer-copyright {
+  font-size: 10px;
+  line-height: 15px;
+  color: #fff;
+  font-family: var(--body-font-family);
+}
+
+/* Mobile: stack columns */
+@media (width < 600px) {
+  .footer .footer-links-section {
+    padding: 40px 0;
+  }
+
+  .footer .footer-links-inner {
+    flex-wrap: wrap;
+  }
+
+  .footer .footer-links-col {
+    flex: 1 1 100%;
+  }
+
+  .footer .footer-bottom-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .footer .footer-acknowledgement {
+    padding: 0;
+    text-align: center;
+  }
+
+  .footer .footer-logos {
+    align-items: center;
+  }
+}
+
+@media (width >= 600px) and (width < 900px) {
+  .footer .footer-links-inner {
+    flex-wrap: wrap;
+  }
+
+  .footer .footer-links-col {
+    flex: 1 1 50%;
+  }
+
+  .footer .footer-links-col:nth-child(3) {
+    flex: 1 1 100%;
+    margin-top: 20px;
   }
 }
