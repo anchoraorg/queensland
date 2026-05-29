@@ -346,6 +346,21 @@ export default async function decorate(block) {
   const brandSection = navContent.children[0];
   const brand = buildBrand(brandSection);
 
+  // Inline nav links for desktop
+  const inlineLinks = document.createElement('ul');
+  inlineLinks.className = 'nav-inline-links';
+  const navSection = navContent.children[1];
+  if (navSection) {
+    navSection.querySelectorAll('h2').forEach((h2) => {
+      const li = document.createElement('li');
+      const btn = document.createElement('button');
+      btn.textContent = h2.textContent;
+      btn.setAttribute('type', 'button');
+      li.append(btn);
+      inlineLinks.append(li);
+    });
+  }
+
   // Actions (bookmark + search + hamburger)
   const actions = document.createElement('div');
   actions.className = 'nav-actions';
@@ -358,7 +373,7 @@ export default async function decorate(block) {
   const hamburgerBtn = buildHamburgerButton();
   actions.append(bookmarkBtn, searchBtn, hamburgerBtn);
 
-  headerBar.append(brand, actions);
+  headerBar.append(brand, inlineLinks, actions);
 
   // Full-screen menu dialog
   const menuDialog = buildMenuDialog(navContent);
@@ -388,6 +403,19 @@ export default async function decorate(block) {
   // Accordion behavior
   const accordion = menuDialog.querySelector('.nav-accordion');
   if (accordion) setupAccordion(accordion);
+
+  // Inline nav link clicks open menu to specific panel
+  inlineLinks.querySelectorAll('button').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      openMenu(menuDialog, hamburgerBtn);
+      const panelTriggers = accordion.querySelectorAll('.nav-panel-trigger');
+      panelTriggers.forEach((trigger) => {
+        if (trigger.textContent.trim() === btn.textContent.trim()) {
+          trigger.click();
+        }
+      });
+    });
+  });
 
   // Search icon opens menu
   searchBtn.addEventListener('click', () => {

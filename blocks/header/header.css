@@ -79,6 +79,35 @@ header .nav-close-btn {
   transition: background-color 0.2s ease;
 }
 
+/* Inline nav links - hidden on mobile, shown on desktop */
+header .nav-inline-links {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  gap: 0;
+}
+
+header .nav-inline-links button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: 8px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+header .nav-inline-links button:hover {
+  opacity: 0.7;
+}
+
 /* Hamburger button */
 header .nav-hamburger-btn {
   background: transparent;
@@ -466,6 +495,14 @@ header .nav-bookmarks-link:hover {
 
 /* Desktop responsive (900px+) */
 @media (width >= 900px) {
+  header .nav-inline-links {
+    display: flex;
+  }
+
+  header .nav-hamburger-btn {
+    display: none;
+  }
+
   header .nav-header-bar {
     padding: 0 16px;
     height: 91px;
