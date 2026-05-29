@@ -1,16 +1,8 @@
 /* Header - Queensland Tourism Navigation */
 
-/* Nav wrapper - fixed transparent header */
+/* Nav wrapper - transparent (fixed positioning moved to <header> in styles.css) */
 header .nav-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: rgb(0 0 0 / 60%);
-  backdrop-filter: blur(4px);
-  border-bottom: 1px solid rgb(166 184 193 / 20%);
-  transition: color 0.35s ease, background-color 0.35s ease;
+  background: transparent;
 }
 
 /* Header bar layout */
@@ -20,8 +12,9 @@ header .nav-header-bar {
   justify-content: space-between;
   max-width: 1584px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 16px;
   height: var(--nav-height, 91px);
+  background: transparent;
 }
 
 /* Nav element */
@@ -49,8 +42,8 @@ header .nav-brand svg {
 }
 
 header .nav-logo-img {
-  width: 160px;
-  height: auto;
+  width: 145px;
+  height: 42px;
   display: block;
 }
 
@@ -86,23 +79,18 @@ header .nav-close-btn {
   transition: background-color 0.2s ease;
 }
 
-/* Hamburger button with animated lines */
+/* Hamburger button */
 header .nav-hamburger-btn {
-  background: none;
+  background: transparent;
   border: none;
   cursor: pointer;
   color: #fff;
-  padding: 8px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
-  width: 40px;
-  height: 40px;
-  position: relative;
-  flex-direction: column;
-  gap: 5px;
+  width: 22px;
+  height: 22px;
 }
 
 header .nav-bookmark-btn:hover,
@@ -118,28 +106,9 @@ header .nav-close-btn:focus-visible {
   outline-offset: 2px;
 }
 
-header .hamburger-line {
-  display: block;
+header .nav-hamburger-btn svg {
   width: 22px;
-  height: 2px;
-  background-color: #fff;
-  border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform-origin: center;
-}
-
-/* Hamburger to X animation */
-header .nav-hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-header .nav-hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-
-header .nav-hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  height: 22px;
 }
 
 /* Full-screen menu dialog */
@@ -498,13 +467,8 @@ header .nav-bookmarks-link:hover {
 /* Desktop responsive (900px+) */
 @media (width >= 900px) {
   header .nav-header-bar {
-    padding: 0 32px;
+    padding: 0 16px;
     height: 91px;
-  }
-
-  header .nav-brand svg {
-    width: 160px;
-    height: 32px;
   }
 
   header .nav-actions {
@@ -561,7 +525,7 @@ header .nav-bookmarks-link:hover {
 /* Large desktop (1200px+) */
 @media (width >= 1200px) {
   header .nav-header-bar {
-    padding: 0 60px;
+    padding: 0 16px;
     height: 90px;
   }
 

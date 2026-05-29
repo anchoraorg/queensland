@@ -52,8 +52,8 @@ function buildBrand(brandSection) {
     logoImg.src = '/icons/queensland-logo.svg';
     logoImg.alt = 'Queensland';
     logoImg.className = 'nav-logo-img';
-    logoImg.width = 160;
-    logoImg.height = 32;
+    logoImg.width = 145;
+    logoImg.height = 42;
     brandLink.append(logoImg);
     brand.append(brandLink);
   }
@@ -85,9 +85,11 @@ function buildHamburgerButton() {
   btn.className = 'nav-hamburger-btn';
   btn.setAttribute('aria-label', 'Open menu');
   btn.setAttribute('aria-expanded', 'false');
-  btn.innerHTML = `<span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>`;
+  btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="22" height="22" aria-hidden="true">
+    <rect fill="currentColor" x="4" y="10" width="32" height="3" rx="1.5"></rect>
+    <rect fill="currentColor" x="4" y="19" width="32" height="3" rx="1.5"></rect>
+    <rect fill="currentColor" x="4" y="28" width="32" height="3" rx="1.5"></rect>
+  </svg>`;
   return btn;
 }
 

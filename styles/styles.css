@@ -105,7 +105,17 @@ body.appear {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
   height: var(--nav-height);
+  background-color: rgb(0 0 0 / 60%);
+}
+
+main {
+  padding-top: var(--nav-height);
 }
 
 header .header,
