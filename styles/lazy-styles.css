@@ -21,7 +21,6 @@ main > .section > .default-content-wrapper h2 {
 /* "What's on in Queensland" — Full section with weather + tabs */
 main > .section:nth-child(4) {
   background-color: #fff;
-  padding: 60px 0 30px;
   text-align: center;
 }
 
@@ -64,7 +63,6 @@ main > .section:nth-child(4) .default-content-wrapper p {
 /* Events/What's new tab buttons */
 main > .section:nth-child(5) {
   background-color: var(--color-off-white);
-  padding: 30px 0 40px;
 }
 
 main > .section:nth-child(5) .default-content-wrapper {
@@ -99,7 +97,6 @@ main > .section:nth-child(5) .default-content-wrapper a:hover {
 main > .section:nth-child(6) {
   background-color: #1a1a2e;
   color: #fff;
-  padding: 60px 0;
 }
 
 main > .section:nth-child(6) .default-content-wrapper {
@@ -147,14 +144,10 @@ main > .section:nth-child(6) .default-content-wrapper a:hover {
 
 /* "Let us show you around" — centered heading */
 main > .section:nth-child(7) {
-  padding: 60px 0 20px;
   text-align: center;
 }
 
 /* "What holiday feeling are you?" — masonry-style grid */
-main > .section:nth-child(8) {
-  padding: 20px 0 40px;
-}
 
 main > .section:nth-child(8) .default-content-wrapper h2 {
   margin-bottom: 30px;
@@ -224,9 +217,6 @@ main > .section:nth-child(8) .default-content-wrapper li:first-child {
 }
 
 /* "Be our plus one?" — Events carousel */
-main > .section:nth-child(9) {
-  padding: 40px 0;
-}
 
 main > .section:nth-child(9) .default-content-wrapper ul {
   list-style: none;
@@ -304,9 +294,6 @@ main > .section:nth-child(9) .default-content-wrapper > p:last-child a {
 }
 
 /* "Unlock more Queensland magic" — Article grid */
-main > .section:nth-child(10) {
-  padding: 40px 0;
-}
 
 main > .section:nth-child(10) .default-content-wrapper ul {
   list-style: none;
@@ -421,9 +408,6 @@ main > .section:nth-child(10) .default-content-wrapper > p:last-child a:hover {
 }
 
 /* "Roadtrips that are popular right now" — horizontal cards */
-main > .section:nth-child(11) {
-  padding: 40px 0;
-}
 
 main > .section:nth-child(11) .default-content-wrapper ul {
   list-style: none;
