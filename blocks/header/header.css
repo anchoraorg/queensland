@@ -525,20 +525,21 @@ header.header-wrapper.nav-open .nav-search-icon {
     outline-color: var(--color-dark-slate);
   }
 
-  /* Mega-menu dropdown */
+  /* Mega-menu dropdown — full width below header */
   header .mega-menu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 800px;
+    position: fixed;
+    top: var(--nav-height, 91px);
+    left: 0;
+    right: 0;
     background: #fff;
-    padding: 40px;
+    padding: 40px 60px 60px;
     box-shadow: 0 4px 20px rgb(0 0 0 / 15%);
-    border-radius: 0 0 8px 8px;
+    border-top: 3px solid var(--color-teal);
     z-index: 1000;
     opacity: 0;
     animation: mega-fade-in 0.25s ease forwards;
+    max-height: calc(100vh - var(--nav-height, 91px));
+    overflow-y: auto;
   }
 
   header .mega-menu[hidden] {
@@ -548,30 +549,32 @@ header.header-wrapper.nav-open .nav-search-icon {
   @keyframes mega-fade-in {
     from {
       opacity: 0;
-      transform: translateX(-50%) translateY(-4px);
+      transform: translateY(-4px);
     }
 
     to {
       opacity: 1;
-      transform: translateX(-50%) translateY(0);
+      transform: translateY(0);
     }
   }
 
   /* Multi-column layout inside mega-menu */
   header .mega-menu-columns {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
   }
 
   /* Column headings */
   header .mega-menu-col h3 {
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--color-teal);
-    margin: 0 0 16px;
+    margin: 0 0 20px;
     font-family: var(--body-font-family);
   }
 
@@ -593,12 +596,15 @@ header.header-wrapper.nav-open .nav-search-icon {
   /* stylelint-disable-next-line no-descending-specificity */
   header .mega-menu-col a {
     display: block;
-    padding: 6px 0;
+    padding: 8px 0;
     color: var(--color-dark-slate);
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
     transition: color 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
   }
 
   header .mega-menu-col a:hover {
