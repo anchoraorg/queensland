@@ -513,7 +513,7 @@ header.header-wrapper.nav-open .nav-search-icon {
 
   /* Active state for buttons when menu open */
   header .nav-menu ul[role="menubar"] > li > button[aria-expanded="true"] {
-    color: var(--color-dark-slate);
+    color: var(--color-teal);
   }
 
   /* When nav is open, all nav buttons turn dark */
@@ -542,6 +542,7 @@ header.header-wrapper.nav-open .nav-search-icon {
     overflow-y: auto;
   }
 
+
   header .mega-menu[hidden] {
     display: none;
   }
@@ -558,6 +559,22 @@ header.header-wrapper.nav-open .nav-search-icon {
     }
   }
 
+  /* Close button in mega-menu */
+  header .mega-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--color-dark-slate);
+    padding: 8px;
+  }
+
+  header .mega-close-btn:hover {
+    color: var(--color-teal);
+  }
+
   /* Multi-column layout inside mega-menu */
   header .mega-menu-columns {
     display: grid;
@@ -565,6 +582,17 @@ header.header-wrapper.nav-open .nav-search-icon {
     gap: 40px;
     max-width: 1400px;
     margin: 0 auto;
+  }
+
+  /* Column dividers */
+  header .mega-menu-col {
+    border-right: 1px solid #e8e8e8;
+    padding-right: 30px;
+  }
+
+  header .mega-menu-col:last-child {
+    border-right: none;
+    padding-right: 0;
   }
 
   /* Column headings */
@@ -611,6 +639,16 @@ header.header-wrapper.nav-open .nav-search-icon {
     color: var(--color-teal);
   }
 
+  /* Destination type icon images in columns */
+  /* stylelint-disable-next-line no-descending-specificity */
+  header .mega-menu-col a img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 12px;
+  }
+
   /* Categories column with icons */
   /* stylelint-disable-next-line no-descending-specificity */
   header .mega-col-categories a {
@@ -625,13 +663,14 @@ header.header-wrapper.nav-open .nav-search-icon {
     background-color: #f5f5f5;
   }
 
+  /* stylelint-disable-next-line no-descending-specificity */
   header .mega-col-categories img {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
   }
 
-  /* Featured column with image cards */
+  /* Featured/hotspot column with image cards */
   header .mega-col-featured ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -640,28 +679,24 @@ header.header-wrapper.nav-open .nav-search-icon {
 
   /* stylelint-disable-next-line no-descending-specificity */
   header .mega-col-featured li {
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #f8f8f8;
-    transition: background-color 0.2s ease;
-  }
-
-  /* stylelint-disable-next-line no-descending-specificity */
-  header .mega-col-featured li:hover {
-    background-color: #f0f0f0;
+    margin-bottom: 16px;
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
   header .mega-col-featured a {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    border-bottom: none;
     padding: 0;
+    font-weight: 700;
   }
 
-  header .mega-col-featured img {
+  header .mega-col-featured a img {
     width: 100%;
-    height: 100px;
+    aspect-ratio: 3 / 2;
     object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    height: auto;
   }
 
   header .mega-col-featured span,

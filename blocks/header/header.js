@@ -195,7 +195,14 @@ function buildDesktopMenu(panels) {
       columns.append(col);
     });
 
-    dialog.append(columns);
+    // Close button for mega-menu
+    const closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.className = 'mega-close-btn';
+    closeBtn.setAttribute('aria-label', 'Close menu');
+    closeBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="20" height="20"><path fill="currentColor" d="M3.6.6L20 17 36.4.6c.8-.8 2.2-.8 3 0 .8.8.8 2.2 0 3L23 20l16.4 16.4c.8.8.8 2.2 0 3-.8.8-2.2.8-3 0L20 23 3.6 39.4c-.8.8-2.2.8-3 0-.8-.8-.8-2.2 0-3L17 20 .6 3.6c-.8-.8-.8-2.2 0-3 .8-.8 2.2-.8 3 0z"/></svg>';
+
+    dialog.append(columns, closeBtn);
     li.append(btn, dialog);
     ul.append(li);
   });
@@ -380,6 +387,14 @@ function setupDesktopMenu(menuEl, headerEl) {
     });
   });
 
+  // Close button click handlers
+  menuEl.querySelectorAll('.mega-close-btn').forEach((closeBtn) => {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeAllMenus();
+    });
+  });
+
   // Close on click outside
   document.addEventListener('click', (e) => {
     if (!menuEl.contains(e.target)) {
@@ -487,6 +502,65 @@ export default async function decorate(block) {
 
   // Desktop mega-menu
   const desktopMenu = buildDesktopMenu(panels);
+
+  // Post-process mega-menu panels
+  const megaMenus = desktopMenu.querySelectorAll('.mega-menu');
+  if (megaMenus.length > 0) {
+    const firstPanel = megaMenus[0];
+    const cols = firstPanel.querySelectorAll('.mega-menu-col');
+
+    // Add destination type icons to the second column
+    if (cols.length >= 2) {
+      const destTypeIcons = {
+        Beaches: '/references/homepage_files/Icon Files_Beaches_Grey.png',
+        Cities: '/references/homepage_files/Icon Files_City_Grey.png',
+        'Country and Outback': '/references/homepage_files/Icon Files_OutbackCountry_Charcoal.png',
+        'Great Barrier Reef': '/references/homepage_files/Icon Files_GreatBarrierReef_Grey.png',
+        Islands: '/references/homepage_files/Icon Files_Islands_Grey.png',
+        'National Parks and Rainforests': '/references/homepage_files/nationsl-parks.svg',
+      };
+      const destCol = cols[1];
+      const destLinks = destCol.querySelectorAll('a');
+      destLinks.forEach((link) => {
+        const text = link.textContent.trim();
+        if (destTypeIcons[text]) {
+          const img = document.createElement('img');
+          img.src = destTypeIcons[text];
+          img.alt = '';
+          img.width = 28;
+          img.height = 28;
+          link.prepend(img);
+        }
+      });
+    }
+
+    // Rename "What's Trending" to "Hotspots" and add images in the third column
+    if (cols.length >= 3) {
+      const hotspotCol = cols[2];
+      const h3 = hotspotCol.querySelector('h3');
+      if (h3 && h3.textContent.trim() === "What's Trending") {
+        h3.textContent = 'Hotspots';
+      }
+
+      const hotspotImages = {
+        'Best places to see Jacarandas': '/references/homepage_files/2018_BNE_NewFarmPark_139224.jpg',
+        'Secret Queensland beaches': '/references/homepage_files/2024_TNQ_GBR_PortDouglas_MackayC-155084.jpg',
+        'How to do Carnarvon National Park': '/references/homepage_files/2024_QC_CarnarvonGorge_JesseLindemann_155471.jpg',
+        'Things to do Port Douglas': '/references/homepage_files/2024_TNQ_PortDouglas_Sailaway_Sailing_JesseLindemann_155098.jpg',
+      };
+      const hotspotLinks = hotspotCol.querySelectorAll('a');
+      hotspotLinks.forEach((link) => {
+        const text = link.textContent.trim();
+        if (hotspotImages[text]) {
+          const img = document.createElement('img');
+          img.src = hotspotImages[text];
+          img.alt = text;
+          link.prepend(img);
+        }
+      });
+    }
+  }
+
   const navIcons = buildNavIcons(navContent);
 
   // Mobile hamburger
