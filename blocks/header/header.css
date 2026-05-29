@@ -92,35 +92,6 @@ header .nav-bookmark-btn svg {
   height: 22px;
 }
 
-/* Inline nav links - hidden on mobile, shown on desktop */
-header .nav-inline-links {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  gap: 0;
-}
-
-header .nav-inline-links button {
-  background: none;
-  border: none;
-  color: #fff;
-  font-family: var(--body-font-family);
-  font-size: 12px;
-  font-weight: var(--weight-semibold);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  padding: 8px 16px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: opacity 0.2s ease;
-}
-
-header .nav-inline-links button:hover {
-  opacity: 0.7;
-}
-
 /* Hamburger button */
 header .nav-hamburger-btn {
   background: transparent;
@@ -165,7 +136,7 @@ header .nav-menu-dialog {
   overflow: hidden auto;
   padding: calc(var(--nav-height, 64px) + 20px) 20px 40px;
   box-sizing: border-box;
-  transform: translateX(100%);
+  transform: translateY(-8px);
   opacity: 0;
   visibility: hidden;
   transition:
@@ -176,7 +147,7 @@ header .nav-menu-dialog {
 }
 
 header .nav-menu-dialog.is-open {
-  transform: translateX(0);
+  transform: translateY(0);
   opacity: 1;
   visibility: visible;
   transition:
@@ -196,7 +167,7 @@ header .nav-menu-dialog .nav-close-btn {
 
 /* Search button */
 header .nav-search {
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 header .nav-search-btn {
@@ -204,23 +175,25 @@ header .nav-search-btn {
   align-items: center;
   gap: 12px;
   width: 100%;
-  padding: 14px 20px;
-  border: 1px solid #ccc;
-  border-radius: 30px;
-  color: #2d3b45;
+  padding: 12px 16px;
+  background-color: rgb(240 246 247);
+  border: 1px solid rgb(220 233 235);
+  border-radius: 8px;
+  color: rgb(88 111 120);
   text-decoration: none;
-  font-size: 16px;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  font-size: 14px;
+  font-family: var(--body-font-family);
+  transition: border-color 0.2s ease;
 }
 
 header .nav-search-btn:hover {
-  border-color: #999;
-  background-color: #f5f5f5;
+  border-color: rgb(180 210 215);
 }
 
 header .nav-search-btn svg {
   flex-shrink: 0;
-  stroke: #2d3b45;
+  color: rgb(88 111 120);
+  stroke: rgb(88 111 120);
 }
 
 /* Accordion panels */
@@ -289,11 +262,12 @@ header .nav-panel-trigger {
   padding: 18px 0;
   background: none;
   border: none;
-  color: #2d3b45;
+  font-family: trade-gothic-next-compressed, "Trade Gothic Next Compressed", sans-serif;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 1.6px;
+  color: rgb(51 63 72);
   cursor: pointer;
   text-align: left;
   transition: color 0.2s ease;
@@ -322,14 +296,12 @@ header .nav-panel-trigger[aria-expanded="true"] .nav-chevron {
 
 /* Panel content */
 header .nav-panel-content {
-  max-height: 0;
+  display: none;
   overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 header .nav-panel-content[aria-hidden="false"] {
-  max-height: 2000px;
-  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
 }
 
 /* Panel sections */
@@ -505,17 +477,23 @@ header .nav-bookmarks-link:hover {
   color: #0b6e4f;
 }
 
+/* Header state when menu is open */
+header.header-wrapper.nav-open {
+  background-color: #fff;
+}
+
+header.header-wrapper.nav-open .nav-brand svg path {
+  fill: #00817d;
+}
+
+header.header-wrapper.nav-open .nav-bookmark-btn,
+header.header-wrapper.nav-open .nav-search-icon,
+header.header-wrapper.nav-open .nav-hamburger-btn {
+  color: #333f48;
+}
 
 /* Desktop responsive (900px+) */
 @media (width >= 900px) {
-  header .nav-inline-links {
-    display: flex;
-  }
-
-  header .nav-hamburger-btn {
-    display: none;
-  }
-
   header .nav-header-bar {
     padding: 0 16px;
     height: 91px;
@@ -540,19 +518,10 @@ header .nav-bookmarks-link:hover {
   }
 
   /* Panel content 3-column layout on desktop */
-  header .nav-panel-content {
+  header .nav-panel-content[aria-hidden="false"] {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 32px;
-  }
-
-  header .nav-panel-content[aria-hidden="true"] {
-    display: none;
-  }
-
-  header .nav-panel-content[aria-hidden="false"] {
-    display: grid;
-    max-height: none;
     overflow: visible;
     padding-bottom: 24px;
   }
@@ -601,10 +570,6 @@ header .nav-bookmarks-link:hover {
 /* Accessibility: reduce motion */
 @media (prefers-reduced-motion: reduce) {
   header .nav-menu-dialog {
-    transition: none;
-  }
-
-  header .nav-panel-content {
     transition: none;
   }
 
