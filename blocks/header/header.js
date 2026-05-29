@@ -40,7 +40,7 @@ async function fetchNavContent() {
  * @param {Element} brandSection The source brand section element
  * @returns {Element} brand element
  */
-function buildBrand(brandSection) {
+async function buildBrand(brandSection) {
   const brand = document.createElement('div');
   brand.className = 'nav-brand';
   const link = brandSection.querySelector('a');
@@ -48,13 +48,23 @@ function buildBrand(brandSection) {
     const brandLink = document.createElement('a');
     brandLink.href = link.href;
     brandLink.setAttribute('aria-label', 'Queensland - Home');
-    const logoImg = document.createElement('img');
-    logoImg.src = '/icons/queensland-logo.svg';
-    logoImg.alt = 'Queensland';
-    logoImg.className = 'nav-logo-img';
-    logoImg.width = 145;
-    logoImg.height = 42;
-    brandLink.append(logoImg);
+    try {
+      const resp = await fetch('/icons/queensland-logo.svg');
+      if (resp.ok) {
+        const svgText = await resp.text();
+        brandLink.innerHTML = svgText;
+        const svgEl = brandLink.querySelector('svg');
+        if (svgEl) {
+          svgEl.setAttribute('width', '145');
+          svgEl.setAttribute('height', '42');
+          svgEl.setAttribute('aria-hidden', 'true');
+          svgEl.setAttribute('focusable', 'false');
+          svgEl.removeAttribute('id');
+        }
+      }
+    } catch (e) {
+      brandLink.textContent = 'Queensland';
+    }
     brand.append(brandLink);
   }
   return brand;
@@ -344,7 +354,7 @@ export default async function decorate(block) {
 
   // Brand
   const brandSection = navContent.children[0];
-  const brand = buildBrand(brandSection);
+  const brand = await buildBrand(brandSection);
 
   // Inline nav links for desktop
   const inlineLinks = document.createElement('ul');

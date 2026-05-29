@@ -36,47 +36,60 @@ header .nav-brand a {
 }
 
 header .nav-brand svg {
-  width: 140px;
-  height: 28px;
-  fill: #fff;
-}
-
-header .nav-logo-img {
+  display: block;
   width: 145px;
   height: 42px;
-  display: block;
+  color: inherit;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+header .nav-brand svg path {
+  fill: currentcolor;
 }
 
 header .nav-search-icon {
-  background: none;
+  background: transparent;
   border: none;
   color: #fff;
   cursor: pointer;
-  padding: 8px;
+  padding: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
 }
 
-/* Actions container (bookmark + hamburger) */
+header .nav-search-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Actions container */
 header .nav-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 32px;
 }
 
 /* Shared button reset for header actions */
 header .nav-bookmark-btn,
 header .nav-close-btn {
-  background: none;
+  background: transparent;
   border: none;
   cursor: pointer;
   color: #fff;
-  padding: 8px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
+  width: 24px;
+  height: 24px;
+}
+
+header .nav-bookmark-btn svg {
+  width: 22px;
+  height: 22px;
 }
 
 /* Inline nav links - hidden on mobile, shown on desktop */
@@ -509,7 +522,7 @@ header .nav-bookmarks-link:hover {
   }
 
   header .nav-actions {
-    gap: 20px;
+    gap: 32px;
   }
 
   header .nav-menu-dialog {

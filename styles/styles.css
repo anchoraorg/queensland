@@ -112,10 +112,7 @@ header {
   z-index: 200;
   height: var(--nav-height);
   background-color: rgb(0 0 0 / 60%);
-}
-
-main {
-  padding-top: var(--nav-height);
+  transition: color 0.35s ease, background-color 0.35s ease;
 }
 
 header .header,
