@@ -512,12 +512,12 @@ export default async function decorate(block) {
     // Add destination type icons to the second column
     if (cols.length >= 2) {
       const destTypeIcons = {
-        Beaches: 'https://www.queensland.com/content/dam/teq/consumer/global/icons/nav-icons/grey-icons/Icon%20Files_Beaches_Grey.png',
-        Cities: 'https://www.queensland.com/content/dam/teq/consumer/global/icons/nav-icons/grey-icons/Icon%20Files_City_Grey.png',
-        'Country and Outback': 'https://www.queensland.com/content/dam/teq/consumer/global/icons/nav-icons/grey-icons/Icon%20Files_OutbackCountry_Charcoal.png',
-        'Great Barrier Reef': 'https://www.queensland.com/content/dam/teq/consumer/global/icons/nav-icons/grey-icons/Icon%20Files_GreatBarrierReef_Grey.png',
-        Islands: 'https://www.queensland.com/content/dam/teq/consumer/global/icons/nav-icons/grey-icons/Icon%20Files_Islands_Grey.png',
-        'National Parks and Rainforests': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/nationsl-parks.svg',
+        Beaches: '/icons/beaches-grey.png',
+        Cities: '/icons/city-grey.png',
+        'Country and Outback': '/icons/outback-country-grey.png',
+        'Great Barrier Reef': '/icons/reef-grey.png',
+        Islands: '/icons/islands-grey.png',
+        'National Parks and Rainforests': '/icons/national-parks.svg',
       };
       const destCol = cols[1];
       const destLinks = destCol.querySelectorAll('a');
@@ -565,32 +565,32 @@ export default async function decorate(block) {
   const allPanels = desktopMenu.querySelectorAll('[role="none"]');
   const panelIconMaps = {
     2: { // Plan Your Holiday → Traveller Type
-      'Couples Holidays': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/partner.svg',
-      'Family holidays': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/partner-and-kids.svg',
-      Families: 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/partner-and-kids.svg',
-      'Solo Holidays': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/lone-traveler.svg',
-      'Solo Travellers': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/lone-traveler.svg',
-      'Group Holidays': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/group.svg',
-      Groups: 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/group.svg',
-      'Pet-Friendly Holidays': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/in-laws.svg',
-      'Pet Friendly': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/in-laws.svg',
-      'Accessible Travel Hub': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/accessible.svg',
-      'Accessible Travel': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/accessible.svg',
-      Couples: 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/partner.svg',
+      'Couples Holidays': '/icons/partner.svg',
+      'Family holidays': '/icons/partner-and-kids.svg',
+      Families: '/icons/partner-and-kids.svg',
+      'Solo Holidays': '/icons/lone-traveler.svg',
+      'Solo Travellers': '/icons/lone-traveler.svg',
+      'Group Holidays': '/icons/group.svg',
+      Groups: '/icons/group.svg',
+      'Pet-Friendly Holidays': '/icons/in-laws.svg',
+      'Pet Friendly': '/icons/in-laws.svg',
+      'Accessible Travel Hub': '/icons/accessible.svg',
+      'Accessible Travel': '/icons/accessible.svg',
+      Couples: '/icons/partner.svg',
     },
     3: { // What's on → Event Types
-      'Arts and Culture Events': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/arts-and-culture.svg',
-      'Food and Drink Events': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/food-and-drink.svg',
-      Markets: 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/markets-shopping.svg',
-      'Music and Festivals': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/music.svg',
-      'Endurance Events': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/endurance.svg',
-      'Sports Events': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/sports.svg',
+      'Arts and Culture Events': '/icons/arts-and-culture.svg',
+      'Food and Drink Events': '/icons/food-and-drink.svg',
+      Markets: '/icons/markets-shopping.svg',
+      'Music and Festivals': '/icons/music.svg',
+      'Endurance Events': '/icons/endurance.svg',
+      'Sports Events': '/icons/sports.svg',
     },
     4: { // Deals → Other Deals
-      'All Deals': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/all.svg',
-      'Beach Holiday Deals': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/beaches.svg',
-      'City Holiday Deals': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/beach-deals.svg',
-      'Great Barrier Reef Holiday Deals': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/great-barrier-reef.svg',
+      'All Deals': '/icons/all.svg',
+      'Beach Holiday Deals': '/icons/beaches.svg',
+      'City Holiday Deals': '/icons/beach-deals.svg',
+      'Great Barrier Reef Holiday Deals': '/icons/great-barrier-reef.svg',
     },
   };
 
