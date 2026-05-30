@@ -511,14 +511,14 @@ header.header-wrapper.nav-open .nav-search-icon {
     border-radius: 4px;
   }
 
-  /* Active state for buttons when menu open */
-  header .nav-menu ul[role="menubar"] > li > button[aria-expanded="true"] {
-    color: var(--color-teal);
-  }
-
   /* When nav is open, all nav buttons turn dark */
   header.header-wrapper.nav-open .nav-menu ul[role="menubar"] > li > button {
     color: var(--color-dark-slate);
+  }
+
+  /* Active state for buttons when menu open — teal highlight */
+  header.header-wrapper.nav-open .nav-menu ul[role="menubar"] > li > button[aria-expanded="true"] {
+    color: var(--color-teal);
   }
 
   header.header-wrapper.nav-open .nav-menu ul[role="menubar"] > li > button:focus-visible {
