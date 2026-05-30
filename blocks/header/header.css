@@ -672,7 +672,7 @@ header.header-wrapper.nav-open .nav-search-icon {
 
   /* stylelint-disable-next-line no-descending-specificity */
   header .mega-col-categories a:hover {
-    background-color: #f5f5f5;
+    background-color: transparent;
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
