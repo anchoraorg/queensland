@@ -809,6 +809,39 @@ header.header-wrapper.nav-open .nav-search-icon {
    ACCESSIBILITY: REDUCED MOTION
    ======================================== */
 
+/* Scrolled state — white background, dark text, teal logo */
+header.header-scrolled {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+header.header-scrolled nav {
+  color: var(--color-dark-slate);
+}
+
+header.header-scrolled .nav-brand svg {
+  color: var(--color-teal);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+header.header-scrolled .nav-brand svg path {
+  fill: var(--color-teal);
+}
+
+/* stylelint-disable no-descending-specificity */
+header.header-scrolled .nav-bookmark-icon,
+header.header-scrolled .nav-search-icon {
+  color: var(--color-dark-slate);
+}
+/* stylelint-enable no-descending-specificity */
+
+@media (width >= 992px) {
+  /* stylelint-disable-next-line no-descending-specificity */
+  header.header-scrolled .nav-menu ul[role="menubar"] > li > button {
+    color: var(--color-dark-slate);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   header .nav-mobile-menu {
     transition: none;

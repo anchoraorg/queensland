@@ -650,4 +650,14 @@ export default async function decorate(block) {
   const headerEl = document.querySelector('header');
   setupDesktopMenu(desktopMenu, headerEl);
   setupMobileMenu(mobileMenu, hamburgerBtn, headerEl);
+
+  // Scroll-based header state: transparent → white background
+  const SCROLL_THRESHOLD = 900;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > SCROLL_THRESHOLD) {
+      headerEl.classList.add('header-scrolled');
+    } else {
+      headerEl.classList.remove('header-scrolled');
+    }
+  }, { passive: true });
 }
