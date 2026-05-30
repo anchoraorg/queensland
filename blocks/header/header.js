@@ -652,7 +652,7 @@ export default async function decorate(block) {
   setupMobileMenu(mobileMenu, hamburgerBtn, headerEl);
 
   // Scroll-based header state: transparent → white background
-  const SCROLL_THRESHOLD = 900;
+  const SCROLL_THRESHOLD = 500;
   window.addEventListener('scroll', () => {
     if (window.scrollY > SCROLL_THRESHOLD) {
       headerEl.classList.add('header-scrolled');
