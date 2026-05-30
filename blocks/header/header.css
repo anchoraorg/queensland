@@ -720,12 +720,12 @@ header.header-wrapper.nav-open .nav-search-icon {
   header .mega-col-featured .hotspot-desc {
     display: block;
     margin-top: 4px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     text-transform: none;
     letter-spacing: 0;
     color: #666;
-    line-height: 1.4;
+    line-height: 1.5;
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
