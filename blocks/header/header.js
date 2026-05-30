@@ -542,20 +542,36 @@ export default async function decorate(block) {
         h3.textContent = 'Hotspots';
       }
 
-      const hotspotImages = {
-        'Best places to see Jacarandas': 'https://s7ap1.scene7.com/is/image/destqueensland/teq/consumer/global/images/destinations/brisbane/blog-images/2018_BNE_NewFarmPark_139224.jpg?fit=crop&wid=300&hei=200&qlt=70',
-        'Secret Queensland beaches': 'https://s7ap1.scene7.com/is/image/destqueensland/teq/consumer/global/images/destinations/tropical-north-queensland/blog-images/2024_TNQ_GBR_PortDouglas_MackayC-155084.jpg?fit=crop&wid=300&hei=200&qlt=70',
-        'How to do Carnarvon National Park': 'https://s7ap1.scene7.com/is/image/destqueensland/teq/consumer/global/images/destinations/southern-queensland-country/blog-images/2024_QC_CarnarvonGorge_JesseLindemann_155471.jpg?fit=crop&wid=300&hei=200&qlt=70',
-        'Things to do Port Douglas': 'https://s7ap1.scene7.com/is/image/destqueensland/teq/consumer/global/images/destinations/tropical-north-queensland/blog-images/2024_TNQ_PortDouglas_Sailaway_Sailing_JesseLindemann_155098.jpg?fit=crop&wid=300&hei=200&qlt=70',
+      const hotspotData = {
+        'Best places to see Jacarandas': {
+          image: 'https://s7ap1.scene7.com/is/image/destqueensland/teq/consumer/global/images/destinations/brisbane/blog-images/2018_BNE_NewFarmPark_139224.jpg?fit=crop&wid=300&hei=200&qlt=70',
+          description: 'The jacarandas are out to steal the show (and your camera roll).',
+        },
+        'Secret Queensland beaches': {
+          image: 'https://s7ap1.scene7.com/is/image/destqueensland/teq/consumer/global/images/destinations/tropical-north-queensland/blog-images/2024_TNQ_GBR_PortDouglas_MackayC-155084.jpg?fit=crop&wid=300&hei=200&qlt=70',
+          description: 'Hidden shores and untouched sands that only locals know about.',
+        },
+        'How to do Carnarvon National Park': {
+          image: 'https://s7ap1.scene7.com/is/image/destqueensland/teq/consumer/global/images/destinations/southern-queensland-country/blog-images/2024_QC_CarnarvonGorge_JesseLindemann_155471.jpg?fit=crop&wid=300&hei=200&qlt=70',
+          description: 'Ancient gorges, Aboriginal rock art and bushwalking trails.',
+        },
+        'Things to do Port Douglas': {
+          image: 'https://s7ap1.scene7.com/is/image/destqueensland/teq/consumer/global/images/destinations/tropical-north-queensland/blog-images/2024_TNQ_PortDouglas_Sailaway_Sailing_JesseLindemann_155098.jpg?fit=crop&wid=300&hei=200&qlt=70',
+          description: 'Where the rainforest meets the reef — your tropical escape.',
+        },
       };
       const hotspotLinks = hotspotCol.querySelectorAll('a');
       hotspotLinks.forEach((link) => {
         const text = link.textContent.trim();
-        if (hotspotImages[text]) {
+        if (hotspotData[text]) {
           const img = document.createElement('img');
-          img.src = hotspotImages[text];
+          img.src = hotspotData[text].image;
           img.alt = text;
           link.prepend(img);
+          const desc = document.createElement('span');
+          desc.className = 'hotspot-desc';
+          desc.textContent = hotspotData[text].description;
+          link.append(desc);
         }
       });
     }

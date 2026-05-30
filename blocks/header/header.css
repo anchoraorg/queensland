@@ -696,7 +696,12 @@ header.header-wrapper.nav-open .nav-search-icon {
     display: block;
     border-bottom: none;
     padding: 0;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-dark-slate);
+    line-height: 1.3;
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
@@ -712,12 +717,15 @@ header.header-wrapper.nav-open .nav-search-icon {
     display: block;
   }
 
-  header .mega-col-featured span,
-  header .mega-col-featured li > a > :last-child {
-    padding: 10px 12px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--color-dark-slate);
+  header .mega-col-featured .hotspot-desc {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #666;
+    line-height: 1.4;
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
