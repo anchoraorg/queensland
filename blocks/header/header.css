@@ -453,6 +453,7 @@ header.header-wrapper.nav-open .nav-search-icon {
     align-items: center;
     flex: 1;
     justify-content: center;
+    padding-left: 120px;
   }
 
   header .nav-icons {
