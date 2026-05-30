@@ -632,11 +632,11 @@ header.header-wrapper.nav-open .nav-search-icon {
     text-transform: uppercase;
     letter-spacing: 0.03em;
     transition: color 0.2s ease;
-    border-bottom: 1px solid #f0f0f0;
   }
 
   header .mega-menu-col a:hover {
     color: var(--color-teal);
+    text-decoration: none;
   }
 
   /* Destination type icon images in columns (exclude featured/hotspot column) */
