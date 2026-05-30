@@ -9,12 +9,12 @@ header .nav-wrapper {
 header .nav-header-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   max-width: 1584px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 88px 0 32px;
   height: var(--nav-height, 91px);
   background: transparent;
+  position: relative;
 }
 
 /* Nav element */
@@ -451,16 +451,17 @@ header.header-wrapper.nav-open .nav-search-icon {
   header .nav-menu {
     display: flex;
     align-items: center;
-    flex: 1;
-    justify-content: flex-end;
-    margin-right: 44px;
+    margin-left: 452px;
   }
 
   header .nav-icons {
     display: flex;
     align-items: center;
     gap: 24px;
-    flex-shrink: 0;
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   header .nav-hamburger-btn {
