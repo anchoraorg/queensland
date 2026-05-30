@@ -512,12 +512,12 @@ export default async function decorate(block) {
     // Add destination type icons to the second column
     if (cols.length >= 2) {
       const destTypeIcons = {
-        Beaches: '/references/homepage_files/Icon Files_Beaches_Grey.png',
-        Cities: '/references/homepage_files/Icon Files_City_Grey.png',
-        'Country and Outback': '/references/homepage_files/Icon Files_OutbackCountry_Charcoal.png',
-        'Great Barrier Reef': '/references/homepage_files/Icon Files_GreatBarrierReef_Grey.png',
-        Islands: '/references/homepage_files/Icon Files_Islands_Grey.png',
-        'National Parks and Rainforests': '/references/homepage_files/nationsl-parks.svg',
+        Beaches: 'https://www.queensland.com/content/dam/teq/consumer/global/icons/nav-icons/grey-icons/Icon%20Files_Beaches_Grey.png',
+        Cities: 'https://www.queensland.com/content/dam/teq/consumer/global/icons/nav-icons/grey-icons/Icon%20Files_City_Grey.png',
+        'Country and Outback': 'https://www.queensland.com/content/dam/teq/consumer/global/icons/nav-icons/grey-icons/Icon%20Files_OutbackCountry_Charcoal.png',
+        'Great Barrier Reef': 'https://www.queensland.com/content/dam/teq/consumer/global/icons/nav-icons/grey-icons/Icon%20Files_GreatBarrierReef_Grey.png',
+        Islands: 'https://www.queensland.com/content/dam/teq/consumer/global/icons/nav-icons/grey-icons/Icon%20Files_Islands_Grey.png',
+        'National Parks and Rainforests': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/nationsl-parks.svg',
       };
       const destCol = cols[1];
       const destLinks = destCol.querySelectorAll('a');
@@ -543,10 +543,10 @@ export default async function decorate(block) {
       }
 
       const hotspotImages = {
-        'Best places to see Jacarandas': '/references/homepage_files/2018_BNE_NewFarmPark_139224.jpg',
-        'Secret Queensland beaches': '/references/homepage_files/2024_TNQ_GBR_PortDouglas_MackayC-155084.jpg',
-        'How to do Carnarvon National Park': '/references/homepage_files/2024_QC_CarnarvonGorge_JesseLindemann_155471.jpg',
-        'Things to do Port Douglas': '/references/homepage_files/2024_TNQ_PortDouglas_Sailaway_Sailing_JesseLindemann_155098.jpg',
+        'Best places to see Jacarandas': 'https://s7ap1.scene7.com/is/image/destqueensland/teq/consumer/global/images/destinations/brisbane/blog-images/2018_BNE_NewFarmPark_139224.jpg?fit=crop&wid=300&hei=200&qlt=70',
+        'Secret Queensland beaches': 'https://s7ap1.scene7.com/is/image/destqueensland/teq/consumer/global/images/destinations/tropical-north-queensland/blog-images/2024_TNQ_GBR_PortDouglas_MackayC-155084.jpg?fit=crop&wid=300&hei=200&qlt=70',
+        'How to do Carnarvon National Park': 'https://s7ap1.scene7.com/is/image/destqueensland/teq/consumer/global/images/destinations/southern-queensland-country/blog-images/2024_QC_CarnarvonGorge_JesseLindemann_155471.jpg?fit=crop&wid=300&hei=200&qlt=70',
+        'Things to do Port Douglas': 'https://s7ap1.scene7.com/is/image/destqueensland/teq/consumer/global/images/destinations/tropical-north-queensland/blog-images/2024_TNQ_PortDouglas_Sailaway_Sailing_JesseLindemann_155098.jpg?fit=crop&wid=300&hei=200&qlt=70',
       };
       const hotspotLinks = hotspotCol.querySelectorAll('a');
       hotspotLinks.forEach((link) => {
