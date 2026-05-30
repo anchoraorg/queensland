@@ -642,11 +642,19 @@ header.header-wrapper.nav-open .nav-search-icon {
   /* Destination type icon images in columns */
   /* stylelint-disable-next-line no-descending-specificity */
   header .mega-menu-col a img {
-    width: 28px;
-    height: 28px;
+    width: 2.125rem;
+    height: auto;
     object-fit: contain;
-    vertical-align: middle;
-    margin-right: 12px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  header .mega-menu-col a:has(img) {
+    position: relative;
+    padding-left: 3rem;
   }
 
   /* Categories column with icons */

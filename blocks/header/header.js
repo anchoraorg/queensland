@@ -561,6 +561,59 @@ export default async function decorate(block) {
     }
   }
 
+  // Add icons to other panels' second columns
+  const allPanels = desktopMenu.querySelectorAll('[role="none"]');
+  const panelIconMaps = {
+    2: { // Plan Your Holiday → Traveller Type
+      'Couples Holidays': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/partner.svg',
+      'Family holidays': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/partner-and-kids.svg',
+      Families: 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/partner-and-kids.svg',
+      'Solo Holidays': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/lone-traveler.svg',
+      'Solo Travellers': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/lone-traveler.svg',
+      'Group Holidays': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/group.svg',
+      Groups: 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/group.svg',
+      'Pet-Friendly Holidays': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/in-laws.svg',
+      'Pet Friendly': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/in-laws.svg',
+      'Accessible Travel Hub': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/accessible.svg',
+      'Accessible Travel': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/accessible.svg',
+      Couples: 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/partner.svg',
+    },
+    3: { // What's on → Event Types
+      'Arts and Culture Events': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/arts-and-culture.svg',
+      'Food and Drink Events': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/food-and-drink.svg',
+      Markets: 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/markets-shopping.svg',
+      'Music and Festivals': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/music.svg',
+      'Endurance Events': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/endurance.svg',
+      'Sports Events': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/sports.svg',
+    },
+    4: { // Deals → Other Deals
+      'All Deals': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/all.svg',
+      'Beach Holiday Deals': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/beaches.svg',
+      'City Holiday Deals': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/beach-deals.svg',
+      'Great Barrier Reef Holiday Deals': 'https://www.queensland.com/content/dam/teq/consumer/global/navigation-icons-and-images/icons/charcoal/great-barrier-reef.svg',
+    },
+  };
+
+  Object.entries(panelIconMaps).forEach(([panelIdx, iconMap]) => {
+    const panel = allPanels[Number(panelIdx)];
+    if (!panel) return;
+    const panelCols = panel.querySelectorAll('.mega-menu-col');
+    if (panelCols.length < 2) return;
+    const col2 = panelCols[1];
+    col2.querySelectorAll('a').forEach((link) => {
+      const text = link.textContent.trim();
+      if (iconMap[text]) {
+        const img = document.createElement('img');
+        img.src = iconMap[text];
+        img.alt = '';
+        img.loading = 'lazy';
+        img.width = 28;
+        img.height = 28;
+        link.prepend(img);
+      }
+    });
+  });
+
   const navIcons = buildNavIcons(navContent);
 
   // Mobile hamburger
