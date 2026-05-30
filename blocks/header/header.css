@@ -453,7 +453,7 @@ header.header-wrapper.nav-open .nav-search-icon {
     align-items: center;
     flex: 1;
     justify-content: center;
-    padding-left: 120px;
+    padding-left: 258px;
   }
 
   header .nav-icons {
@@ -475,7 +475,7 @@ header.header-wrapper.nav-open .nav-search-icon {
   header .nav-menu ul[role="menubar"] {
     display: flex;
     align-items: center;
-    gap: 44px;
+    gap: 2.75rem;
     list-style: none;
     padding: 0;
     margin: 0;
