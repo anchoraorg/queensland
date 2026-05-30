@@ -698,8 +698,8 @@ header.header-wrapper.nav-open .nav-search-icon {
     padding: 0;
     font-size: 13px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
+    text-transform: none;
+    letter-spacing: 0;
     color: var(--color-dark-slate);
     line-height: 1.3;
   }
