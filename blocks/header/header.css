@@ -635,8 +635,11 @@ header.header-wrapper.nav-open .nav-search-icon {
   }
 
   header .mega-menu-col a:hover {
-    color: var(--color-teal);
-    text-decoration: none;
+    color: var(--color-dark-slate);
+    text-decoration: underline;
+    text-decoration-color: var(--color-teal);
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
   }
 
   /* Destination type icon images in columns (exclude featured/hotspot column) */
