@@ -474,7 +474,7 @@ header.header-wrapper.nav-open .nav-search-icon {
   header .nav-menu ul[role="menubar"] {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 44px;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -490,13 +490,13 @@ header.header-wrapper.nav-open .nav-search-icon {
     background: transparent;
     border: none;
     cursor: pointer;
-    font-family: var(--body-font-family);
-    font-size: 16px;
-    font-weight: 400;
+    font-family: var(--heading-font-family);
+    font-size: 20px;
+    font-weight: 700;
     letter-spacing: var(--tracking-wide);
     color: #fff;
     text-transform: uppercase;
-    padding: 8px 16px;
+    padding: 0;
     white-space: nowrap;
     transition: opacity 0.2s ease;
   }
